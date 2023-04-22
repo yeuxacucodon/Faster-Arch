@@ -30,3 +30,5 @@ sudo systemctl enable --now ananicy-cpp.service
 sudo pacman -S earlyoom --noconfirm
 
 sudo systemctl enable --now earlyoom
+
+echo -e "\n\033[1;32mFinished!\033[0m"
