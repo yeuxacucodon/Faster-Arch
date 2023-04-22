@@ -15,15 +15,17 @@ read choice
 
 case $choice in
 "1")
-	yay -S ananicy-cpp ananicy-rules-git --noconfirm
+	yay -S ananicy-cpp ananicy-rules-git preload --noconfirm
 	;;
 "2")
-	paru -S ananicy-cpp ananicy-rules-git --noconfirm
+	paru -S ananicy-cpp ananicy-rules-git preload --noconfirm
 	;;
 *)
 	exit -1
 	;;
 esac
+
+sudo systemctl enable --now preload
 
 sudo systemctl enable --now ananicy-cpp.service
 
