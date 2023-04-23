@@ -28,7 +28,7 @@ esac
 # Use dbus-broker
 sudo pacman -S dbus-broker --noconfirm
 sudo systemctl enable --now dbus-broker.service
-sudo systemctl disable dbus.service
+systemctl --user enable dbus-broker.service
 
 sudo systemctl enable --now preload
 sudo systemctl enable --now ananicy-cpp.service
