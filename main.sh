@@ -25,12 +25,14 @@ case $choice in
 	;;
 esac
 
+# Use dbus-broker
+sudo pacman -S dbus-broker --noconfirm
+sudo systemctl enable --now dbus-broker.service
+sudo systemctl disable dbus.service
+
 sudo systemctl enable --now preload
-
 sudo systemctl enable --now ananicy-cpp.service
-
 sudo pacman -S earlyoom --noconfirm
-
 sudo systemctl enable --now earlyoom
 
 echo -e "\n\033[1;32mFinished!\033[0m"
