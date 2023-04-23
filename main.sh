@@ -25,6 +25,13 @@ case $choice in
 	;;
 esac
 
+# Install linux-zen kernel
+sudo pacman -S linux-zen --noconfirm
+if [[ $(pacman -Q grub | cut -f 1 -d " ") == "grub" ]]; then
+	echo -e "\n\033[1;31mUpdate GRUB\n\033[0m"
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
+fi
+
 # Use dbus-broker
 sudo pacman -S dbus-broker --noconfirm
 sudo systemctl enable --now dbus-broker.service
@@ -32,6 +39,7 @@ systemctl --user enable dbus-broker.service
 
 sudo systemctl enable --now preload
 sudo systemctl enable --now ananicy-cpp.service
+
 sudo pacman -S earlyoom --noconfirm
 sudo systemctl enable --now earlyoom
 
