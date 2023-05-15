@@ -15,10 +15,10 @@ read choice
 
 case $choice in
 "1")
-	yay -S ananicy-cpp ananicy-rules-git preload --noconfirm
+	yay -S ananicy-cpp ananicy-rules-git --noconfirm
 	;;
 "2")
-	paru -S ananicy-cpp ananicy-rules-git preload --noconfirm
+	paru -S ananicy-cpp ananicy-rules-git --noconfirm
 	;;
 *)
 	exit -1
@@ -37,12 +37,11 @@ sudo pacman -S dbus-broker --noconfirm
 sudo systemctl enable --now dbus-broker.service
 systemctl --user enable dbus-broker.service
 
-# Enable preload and ananicy-cpp
-sudo systemctl enable --now preload
+# Enable ananicy-cpp
 sudo systemctl enable --now ananicy-cpp.service
 
 # Install earlyoom
 sudo pacman -S earlyoom --noconfirm
 sudo systemctl enable --now earlyoom
 
-echo -e "\n\033[1;32mFinished!\033[0m"
+echo -e "\n\033[1;32mFinished! Reboot and enjoy\033[0m"
