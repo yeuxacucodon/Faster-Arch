@@ -15,10 +15,10 @@ read choice
 
 case $choice in
 "1")
-	yay -S ananicy-cpp ananicy-rules-git --noconfirm
+	yay -S ananicy-cpp-git ananicy-rules-git --noconfirm
 	;;
 "2")
-	paru -S ananicy-cpp ananicy-rules-git --noconfirm
+	paru -S ananicy-cpp-git ananicy-rules-git --noconfirm
 	;;
 *)
 	exit -1
