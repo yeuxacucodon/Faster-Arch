@@ -23,9 +23,9 @@ case $choice in
 esac
 
 echo -n -e "\n\033[0;32mDo you want to install intel-media-sdk and intel-media-driver? (y/n): \033[0m"
-read choice
+read option
 
-if [[ $choice == 'y' ]]; then
+if [[ $option == 'y' ]]; then
 	sudo pacman -S intel-media-driver intel-media-sdk --noconfirm
 fi
 
