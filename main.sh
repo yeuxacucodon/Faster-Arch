@@ -30,7 +30,11 @@ if [[ $option == 'y' ]]; then
 fi
 
 # Install linux-zen kernel and update GRUB
-sudo pacman -S linux-zen --noconfirm
+
+if [[ $(pacman -Q linux-zen | cut -f 1 -d " ") == "linux-zen" ]]; then
+	sudo pacman -S linux-zen --noconfirm
+fi
+
 if [[ $(pacman -Q grub | cut -f 1 -d " ") == "grub" ]]; then
 	echo -e "\n\033[1;31mUpdate GRUB...\n\033[0m"
 	sudo cp ./grub /etc/default/
